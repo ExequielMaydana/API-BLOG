@@ -29,9 +29,9 @@ const getCreate = (req, res) => {
   }
 };
 
-const getById = (id) => {
+const getById = (req, res) => {
   const id = req.params.id;
-  const data = postControllers.getPostById();
+  const data = postControllers.getPostById(id);
 
   if (data) {
     return res.status(200).json(data);
