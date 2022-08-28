@@ -75,7 +75,7 @@ const editPostByUser = (req, res) => {
       },
     });
   } else {
-    const response = postControllers.createPost(data);
+    const response = postControllers.createPost(id, data, user);
     return res
       .status(201)
       .json({ message: "Post edit succesfully", post: response });
