@@ -13,13 +13,13 @@ const postsDB = [];
 }
 */
 
-const createPost = (data) => {
+const createPost = (user, data) => {
   const newPost = {
     id: uuid.v4(),
     title: data.title,
     content: data.content,
     header_image: data.header_image ? data.header_image : " ",
-    user_id: user_id,
+    user_id: user,
     published: true,
   };
   postsDB.push(newPost);
