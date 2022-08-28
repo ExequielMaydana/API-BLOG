@@ -20,7 +20,7 @@ const getCreate = (req, res) => {
   const data = req.body;
 
   if (!data) {
-    res.status(400).json({ message: "Missing data" });
+   return res.status(400).json({ message: "Missing data" });
   } else if (
     !data.first_name ||
     !data.last_name ||

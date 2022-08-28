@@ -14,6 +14,7 @@ const postsDB = [];
 */
 
 const createPost = (user, data) => {
+  
   const newPost = {
     id: uuid.v4(),
     title: data.title,
@@ -22,6 +23,7 @@ const createPost = (user, data) => {
     user_id: user,
     published: true,
   };
+  
   postsDB.push(newPost);
   return newPost;
 };

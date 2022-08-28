@@ -7,8 +7,11 @@ const getAll = (req, res) => {
 
 const getCreate = (req, res) => {
   const data = req.body;
+  const user = req.user.id
+
   if (!data) {
     return res.status(400).json({ message: "Missing Data" });
+
   } else if (!data.title || !data.content) {
     return res.status(400).json({
       message: "all fields must be completed",
@@ -19,7 +22,7 @@ const getCreate = (req, res) => {
       },
     });
   } else {
-    const response = postControllers.createPost(data);
+    const response = postControllers.createPost(data, user);
     return res
       .status(201)
       .json({
