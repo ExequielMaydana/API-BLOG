@@ -3,7 +3,22 @@ const uuid = require("uuid");
 
 const { hashPassword } = require('../utils/crypt')
 
-const usersDB = [];
+const usersDB = [
+  {
+    "id": "ba734d84-a830-4819-9e77-b61f28b70980",
+    "first_name": "Exequiel",
+    "last_name": "Maydana",
+    "email": "maydana@gmail.com",
+    "password": "$2b$10$U7Qrqz5YupGnKtQ4fvF9xeCX4mSyarSidsqrp2NCP1yej9gBAVTrK",
+    "phone": "",
+    "birthday_date": "16/01/1999",
+    "rol": "normal",
+    "profile_image": "",
+    "country": "Arg",
+    "is_active": true,
+    "verified": false
+  }
+];
 
 //? controlador para obtener todos los usuarios.
 const getAllUser = () => {

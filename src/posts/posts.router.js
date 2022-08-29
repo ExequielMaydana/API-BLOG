@@ -8,25 +8,4 @@ router.route("/").get(postServices.getAll).post(passport.authenticate('jwt', {se
 
 router.get("/:id", postServices.getById);
 
-router.get(
-  "/me/posts",
-  passport.authenticate("JWT", { session: false }),
-  postServices.getAllPostUser
-);
-
-router
-  .route("/me/posts/:id")
-  .get(
-    passport.authenticate("jwt", { session: false }),
-    postServices.getPostEspecifiUser
-  )
-  .put(
-    passport.authenticate("jwt", { session: false }),
-    postServices.editPostByUser
-  )
-  .delete(
-    passport.authenticate("jwt", { session: false }),
-    postServices.removePostByUser
-  );
-
 module.exports = { router };
