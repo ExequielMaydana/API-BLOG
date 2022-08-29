@@ -22,7 +22,7 @@ const getCreate = (req, res) => {
       },
     });
   } else {
-    const response = postControllers.createPost(data, user);
+    const response = postControllers.createPost(user, data);
     return res
       .status(201)
       .json({
